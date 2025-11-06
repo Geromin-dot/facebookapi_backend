@@ -9,12 +9,10 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
-                .allowedOrigins(
-                        "https://facebookapi-frontend.onrender.com",  // your Render frontend
-                        "http://localhost:5173"
-                )
-                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                .allowedHeaders("*")
+                .allowedOrigins("https://facebookapi-frontend.onrender.com", "http://localhost:5173")
+                .allowedMethods("*") // allow ALL HTTP methods
+                .allowedHeaders("*") // allow all headers
                 .allowCredentials(true);
     }
 }
+
